@@ -25,7 +25,7 @@
 #define kRainNightTopColor UIColorFromRGB(13, 13, 18)
 #define kRainNightBottomColor UIColorFromRGB(25, 27, 36)
 
-#define kWeatherChangeAnimationDuration 3.0
+#define kWeatherChangeAnimationDuration 1.0
 
 typedef NS_ENUM(NSInteger, WHWeatherBackViewType){
     WHWeatherBackViewTypeSunDay = 0,
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger, WHWeatherBackViewType){
 
 - (void)configueWeather
 {
-    
+    [self showWeatherAnimationWithType:WHWeatherTypeSun];
 }
 
 #pragma mark -
@@ -273,6 +273,7 @@ typedef NS_ENUM(NSInteger, WHWeatherBackViewType){
     if (!_weatherBackImageView) {
         _weatherBackImageView = [[UIImageView alloc] init];
         _weatherBackImageView.userInteractionEnabled = YES;
+        _weatherBackImageView.clipsToBounds = YES;
     }
     return _weatherBackImageView;
 }
