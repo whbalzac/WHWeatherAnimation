@@ -1,9 +1,9 @@
 //
 //  DrawLineAnimationView.h
-//  AnimationShowProject
+//  SiShi
 //
-//  Created by Bert on 16/7/21.
-//  Copyright © 2016年 Bert. All rights reserved.
+//  Created by whbalzac on 13/10/2017.
+//  Copyright © 2017 whbalzac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

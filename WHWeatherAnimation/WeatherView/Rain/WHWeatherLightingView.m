@@ -1,9 +1,9 @@
 //
 //  DrawLineAnimationView.m
-//  AnimationShowProject
+//  SiShi
 //
-//  Created by Bert on 16/7/21.
-//  Copyright © 2016年 Bert. All rights reserved.
+//  Created by whbalzac on 13/10/2017.
+//  Copyright © 2017 whbalzac. All rights reserved.
 //
 
 #import "WHWeatherLightingView.h"
@@ -13,7 +13,7 @@
 
 @implementation WHWeatherLightingView
 {
-    NSMutableArray *pointArr;//主干上的点
+    NSMutableArray *pointArr;
     NSMutableArray *branchLightningStartPointArr;
     NSMutableArray *bezierPathArr;
     BOOL stopLighting;
@@ -82,24 +82,20 @@
 }
 
 
-#pragma mark === 永久闪烁的动画 ======
 -(CABasicAnimation *)opacityForever_Animation:(float)time
 {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];//必须写opacity才行。
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     animation.fromValue = [NSNumber numberWithFloat:1.0f];
-    animation.toValue = [NSNumber numberWithFloat:0.0f];//这是透明度。
+    animation.toValue = [NSNumber numberWithFloat:0.0f];
     animation.autoreverses = YES;
     animation.duration = time;
     animation.repeatCount = MAXFLOAT;
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
-    animation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];///没有的话是均匀的动画。
+    animation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     return animation;
 }
 
-/**
- *  删除 子layer
- */
 - (void)deleteLayers
 {
     if (self.layer.sublayers.count > 0)
@@ -118,10 +114,6 @@
     [bezierPathArr removeAllObjects];
 }
 
-
-/**
- *  设置 point
- */
 - (void)setupPointArr
 {
     [pointArr removeAllObjects];
@@ -133,9 +125,6 @@
     }
 }
 
-/**
- *  设置闪电的主干的点
- */
 - (void)setupLightPointArrWithStartPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint displace:(CGFloat)displace
 {
     CGFloat midX = startPoint.x;
@@ -163,10 +152,6 @@
     }
 }
 
-/**
- *  设置闪电分支的起点
- */
-
 - (void)setupBranchLightningPoint
 {
     NSInteger numberLight = arc4random()%2+5;
@@ -183,10 +168,6 @@
     } while (branchLightningStartPointArr.count < numberLight);
 }
 
-/**
- *  设置闪电分支的点
- */
-
 - (NSMutableArray *)setupBranchLightningPathPointWithStartPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint displace:(CGFloat)displace
 {
 
@@ -194,7 +175,6 @@
     CGFloat midY = startPoint.y;
     NSMutableArray *pathPointArr = [NSMutableArray array];
 
-    //第一个起点
     [pathPointArr addObject:NSStringFromCGPoint(startPoint)];
     NSInteger numPathPoint = arc4random()%20+50;
     
@@ -214,9 +194,6 @@
     return pathPointArr;
 }
 
-/**
- *  设置闪电的路径
- */
 - (void)setupLightningPath
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -228,11 +205,9 @@
         
         if (i == 0)
         {
-            //画线,设置起点
             [path moveToPoint:point];
         }else
         {
-            //设置第二个条线的终点,会自动把上一个终点当做起点
             [path addLineToPoint:point];
         }
         
@@ -247,11 +222,9 @@
                 branchPoint = CGPointFromString(branchPointArr[j]);
                 if (j == 0)
                 {
-                    //画线,设置起点
                     [branchPath moveToPoint:branchPoint];
                 }else
                 {
-                    //设置第二个条线的终点,会自动把上一个终点当做起点
                     [branchPath addLineToPoint:branchPoint];
                 }
             }
@@ -263,10 +236,6 @@
 
 }
 
-
-/**
- *  设置闪电的动画效果
- */
 - (void)setupLightningAnimation
 {
     
@@ -277,7 +246,6 @@
     pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
     pathAnimation.repeatCount = 1;
 
-    //透明度
     CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     opacityAnimation.fromValue = [NSNumber numberWithFloat:1.0];
     opacityAnimation.toValue = [NSNumber numberWithFloat:0.0];

@@ -37,11 +37,11 @@
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     style.minimumLineHeight = 24;
     style.alignment = NSTextAlignmentCenter;
-    NSDictionary *attrs = @{ NSFontAttributeName : [UIFont systemFontOfSize:14],
+    NSDictionary *attrs = @{ NSFontAttributeName : [UIFont systemFontOfSize:16],
                              NSForegroundColorAttributeName : [UIColor whiteColor],
                              NSParagraphStyleAttributeName : style};
     
-    NSString *text = @"春江花月夜\n[唐] 张若虚\n春江潮水连海平，海上明月共潮生。\n滟滟随波千万里，何处春江无月明！\n江流宛转绕芳甸，月照花林皆似霰。\n空里流霜不觉飞，汀上白沙看不见。\n江天一色无纤尘，皎皎空中孤月轮。\n江畔何人初见月？江月何年初照人？\n人生代代无穷已，江月年年望相似。\n不知江月待何人，但见长江送流水。\n白云一片去悠悠，青枫浦上不胜愁。\n谁家今夜扁舟子？何处相思明月楼？\n可怜楼上月徘徊，应照离人妆镜台。\n玉户帘中卷不去，捣衣砧上拂还来。\n此时相望不相闻，愿逐月华流照君。\n鸿雁长飞光不度，鱼龙潜跃水成文。\n昨夜闲潭梦落花，可怜春半不还家。\n江水流春去欲尽，江潭落月复西斜。\n斜月沉沉藏海雾，碣石潇湘无限路。\n不知乘月几人归，落月摇情满江树。";
+    NSString *text = @"枫桥夜泊\n[唐] 张继\n月落乌啼霜满天，江枫渔火对愁眠。\n姑苏城外寒山寺，夜半钟声到客船。";
     
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.frame];
     label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attrs];
