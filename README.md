@@ -33,18 +33,20 @@ Animation of weather written in **Objective-C**, including **sun, cloud, rain, t
 
 #### 1. import header
 
-`#import "WHWeatherView.h"`
+```objective-c
+#import "WHWeatherView.h"
+```
 
 #### 2. initialization
 
-```
+```objective-c
 WHWeatherView *weatherView = [[WHWeatherView alloc] init];
 self.weatherView.frame = self.view.bounds;
 [self.view addSubview:self.weatherView];
 ```
 #### 3. show animation
 
-```
+```objective-c
 typedef NS_ENUM(NSInteger, WHWeatherType){
     WHWeatherTypeSun = 0,
     WHWeatherTypeClound = 1,
@@ -54,7 +56,9 @@ typedef NS_ENUM(NSInteger, WHWeatherType){
     WHWeatherTypeOther = 5
 };
 ```
-`- (void)showWeatherAnimationWithType:(WHWeatherType)weatherType;`
+```objective-c
+- (void)showWeatherAnimationWithType:(WHWeatherType)weatherType;
+```
 
 ## More
 
