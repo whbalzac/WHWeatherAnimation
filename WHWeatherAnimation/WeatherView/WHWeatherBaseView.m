@@ -32,7 +32,6 @@
     self.alpha = 0.0;
 }
 
-//云
 -(void)addCloud:(BOOL)isRain rainCount:(NSInteger)rainCount onView:(UIView *)view
 {
     NSMutableArray *temp = [NSMutableArray array];
@@ -63,9 +62,9 @@
         NSNumber *number = temp[i];
         UIImage *cloudImage;
         if (isRain) {
-            cloudImage = [self imageNamed:[NSString stringWithFormat:@"ele_white_cloud_%zd.png",number.integerValue] withTintColor:UIColorFromRGB(0, 51, 86)];
+            cloudImage = [self imageNamed:[NSString stringWithFormat:@"ele_white_cloud_%ld.png",(long)number.integerValue] withTintColor:UIColorFromRGB(0, 51, 86)];
         }else{
-            cloudImage = [UIImage imageNamed:[NSString stringWithFormat:@"ele_white_cloud_%zd.png",number.integerValue]];
+            cloudImage = [UIImage imageNamed:[NSString stringWithFormat:@"ele_white_cloud_%ld.png",(long)number.integerValue]];
         }
         
         CGFloat offsetX = i * kOffsetXScreenCount / rainCount * kScreenWidth - (kOffsetXScreenCount - 1) / 2.0 * kScreenWidth;
@@ -79,7 +78,6 @@
     }
 }
 
-//云 动画
 - (CAAnimationGroup *)cloudAnimationWithFromValue:(NSNumber *)fromValue toValue:(NSNumber *)toValue duration:(NSInteger)duration
 {
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
@@ -123,7 +121,6 @@
     return groupAnimation;
 }
 
-//动画横向移动方法
 - (CABasicAnimation *)birdFlyAnimationWithToValue:(NSNumber *)toValue duration:(NSInteger)duration autoreverses:(BOOL)autoreverses
 {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
@@ -136,24 +133,22 @@
     return animation;
 }
 
-//动画旋转方法
 - (CABasicAnimation *)sunshineAnimationWithDuration:(NSInteger)duration{
     
     CGFloat fromFloat = 0;
-    //旋转动画
+    
     CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.fromValue = [NSNumber numberWithFloat:fromFloat * M_PI];
     rotationAnimation.toValue = [NSNumber numberWithFloat:(fromFloat + 2.0 ) * M_PI];
     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnimation.duration = duration;
-    rotationAnimation.repeatCount = MAXFLOAT;//你可以设置到最大的整数值
+    rotationAnimation.repeatCount = MAXFLOAT;
     rotationAnimation.cumulative = NO;
     rotationAnimation.removedOnCompletion = NO;
     rotationAnimation.fillMode = kCAFillModeForwards;
     return rotationAnimation;
 }
 
-//下雨动画方法
 - (CABasicAnimation *)rainAnimationWithDuration:(NSInteger)duration{
     
     CABasicAnimation* caBaseTransform = [CABasicAnimation animation];
@@ -168,7 +163,7 @@
     return caBaseTransform;
     
 }
-//透明度动画
+
 - (CABasicAnimation *)rainAlphaWithDuration:(NSInteger)duration {
     
     CABasicAnimation *showViewAnn = [CABasicAnimation animationWithKeyPath:@"opacity"];

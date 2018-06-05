@@ -31,7 +31,7 @@
     
     for (NSInteger i = 0; i < 43; i++) {
         NSInteger randomInteger = arc4random()%3 + 1;
-        UIImageView *rainLineView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"ele_rainLine%zd.png", randomInteger]]];
+        UIImageView *rainLineView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"ele_rainLine%ld.png", (long)randomInteger]]];
         rainLineView.tag = 100+i;
         
         if (randomInteger == 1) {

@@ -27,16 +27,16 @@
 -(void)startAnimation;
 -(void)stopAnimation;
 
-//云
+//cloud
 -(void)addCloud:(BOOL)isRain rainCount:(NSInteger)rainCount onView:(UIView *)view;
-//云 动画
+//cloud animation
 - (CAAnimationGroup *)cloudAnimationWithFromValue:(NSNumber *)fromValue toValue:(NSNumber *)toValue duration:(NSInteger)duration;
-//动画横向移动方法
+//horizontal animation
 - (CABasicAnimation *)birdFlyAnimationWithToValue:(NSNumber *)toValue duration:(NSInteger)duration autoreverses:(BOOL)autoreverses;
-//动画旋转方法
+//rotating animation
 - (CABasicAnimation *)sunshineAnimationWithDuration:(NSInteger)duration;
-//下雨动画方法
+//rain animation
 - (CABasicAnimation *)rainAnimationWithDuration:(NSInteger)duration;
-//透明度动画
+//alpha animation
 - (CABasicAnimation *)rainAlphaWithDuration:(NSInteger)duration;
 @end

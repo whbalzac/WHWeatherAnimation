@@ -30,7 +30,7 @@
         [self addSubview:snowView];
         [snowView.layer addAnimation:[self rainAnimationWithDuration:5+i%5] forKey:nil];
         [snowView.layer addAnimation:[self rainAlphaWithDuration:5+i%5] forKey:nil];
-        [snowView.layer addAnimation:[self sunshineAnimationWithDuration:5] forKey:nil];//雪花旋转
+        [snowView.layer addAnimation:[self sunshineAnimationWithDuration:5] forKey:nil];
     }
     
     self.layer.speed = 0.0;

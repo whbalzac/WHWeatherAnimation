@@ -9,11 +9,11 @@
 #import "WHWeatherClound.h"
 
 @interface WHWeatherClound ()
-@property (nonatomic, strong) NSMutableArray *imageArr;//鸟图片数组
-@property (nonatomic, strong) UIImageView *birdImage;//鸟本体
-@property (nonatomic, strong) UIImageView *birdRefImage;//鸟倒影
-@property (nonatomic, strong) UIImageView *cloudImageViewF;//云
-@property (nonatomic, strong) UIImageView *cloudImageViewS;//云
+@property (nonatomic, strong) NSMutableArray *imageArr;
+@property (nonatomic, strong) UIImageView *birdImage;
+@property (nonatomic, strong) UIImageView *birdRefImage;
+@property (nonatomic, strong) UIImageView *cloudImageViewF;
+@property (nonatomic, strong) UIImageView *cloudImageViewS;
 @end
 
 @implementation WHWeatherClound
