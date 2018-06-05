@@ -4,7 +4,7 @@
 	 <img src="./ReadmeResource/support.png" width = "131" height = "20">
 </div>
 
- <img src="./ReadmeResource/introduce.png" width = "500" height = "175">
+ <img src="./ReadmeResource/introduce.png" width = "750" height = "262.5">
 
 ## WHWeatherAnimation
 
