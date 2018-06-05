@@ -8,15 +8,17 @@
 
 ## WHWeatherAnimation
 
-Animation of weather(sun, cloud, rain, thunderstorm, snow) written in **Objective-C**
+Animation of weather written in **Objective-C**, including **sun, cloud, rain, thunderstorm, snow** animation.
 
-<figure class="five">
-	<img src="./ReadmeResource/sun.gif" width = "19%"/>
-	<img src="./ReadmeResource/cloud.gif" width = "19%"/>
-	<img src="./ReadmeResource/rain.gif" width = "19%"/>
-	<img src="./ReadmeResource/thunder.gif" width = "19%"/>
-	<img src="./ReadmeResource/snow.gif" width = "19%"/>
-</figure>
+<img src="./ReadmeResource/sun.gif" width = "30%">
+
+<img src="./ReadmeResource/cloud.gif" width = "30%">
+
+<img src="./ReadmeResource/rain.gif" width = "30%">
+
+<img src="./ReadmeResource/thunder.gif" width = "30%">
+
+<img src="./ReadmeResource/snow.gif" width = "30%">
 
 ## Features
 
